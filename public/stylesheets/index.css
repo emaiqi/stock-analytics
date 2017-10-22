@@ -29,3 +29,8 @@ input::-webkit-inner-spin-button{
 }
 
 input[type="date"]{-moz-appearance:none !important;}
+
+#quotation .table-cell {
+	display: table-cell;
+	padding: 0 3px !important;
+}

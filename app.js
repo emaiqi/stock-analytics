@@ -26,7 +26,6 @@ app.use(serve(path.join(__dirname, "public")));
 app.use(common.config);
 
 app.use(route.get('/level2', function * () {
-	console.log(this.request.query.code);
 	var options = {
         method : "GET",
         url : "http://ali.api.intdata.cn/stock/hs_level2/real",
@@ -36,9 +35,7 @@ app.use(route.get('/level2', function * () {
             Authorization: "APPCODE 2f0fd94c6db3402ba1cd561e43a994ae"
         }
     };
-    console.log(options.headers);
     var res = yield this.routeConfig(options);
-    console.log(res.body);
     this.status = res.statusCode;
     this.body = res.body;
 }));

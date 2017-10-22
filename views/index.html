@@ -30,6 +30,12 @@
 					<li><a id="zxIndex" href="#">中小板指</a></li>
 					<li><a id="cyIndex" href="#">创业板指</a></li>
 				</ul>
+				<div class="navbar-form navbar-left">
+					<div class="form-group">
+						<input id="stockCode" type="text" class="form-control" placeholder="请输入个股代码...">
+					</div>
+					<button id="searchStock" class="btn btn-info">查询</button>
+				</div>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
 	</div>
@@ -38,38 +44,49 @@
 		<div class="col-xs-12 col-md-10 col-md-offset-1">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">K线图</h3>
+					<h3 class="panel-title" id="stockName"></h3>
 				</div>
 				<div class="panel-body">
-					<div class="row">
-						<div class="col-xs-4">
-							<select id="kInterval" class="form-control">
-							<!-- 	<option>日K线</option>
-								<option>周K线</option>
-								<option>月K线</option>
-								<option>5分钟</option>
-								<option>15分钟</option>
-								<option>30分钟</option>
-								<option>60分钟</option> -->
-							</select>
+					<div class="col-xs-9">
+						<div class="row">
+							<div class="col-xs-4">
+								<select id="kInterval" class="form-control"></select>
+							</div>
+							<div class="col-xs-5 col-xs-offset-2" title="2017年10月1日则输入20171001,以此类推">
+								<div class="input-group">
+									<span class="input-group-addon">起始时间</span>
+									<input id="beginTime" type="date" class="form-control" 
+									placeholder="20171001">
+								</div>
+							</div>
+							<!-- <div class="col-xs-1" style="padding-left: 0px;">
+								<button id="beginTimeConfirm" class="btn btn-info">确定</button>
+							</div> -->
 						</div>
-						<div class="col-xs-5 col-xs-offset-2" title="2017年10月1日则输入20171001,以此类推">
-							<div class="input-group">
-								<span class="input-group-addon">起始时间</span>
-								<input id="beginTime" type="date" class="form-control" 
-								placeholder="20171001">
+						</br>
+						<div id="kGraph" class="graph-box">
+						</div>
+						<hr/>
+						<div class="row">
+							<div class="col-xs-4">
+								<select id="timeInterval" class="form-control"></select>
 							</div>
 						</div>
-						<div class="col-xs-1" style="padding-left: 0px;">
-							<button id="beginTimeConfirm" class="btn btn-info">确定</button>
+						<br/>
+						<div id="timeGraph" class="graph-box">
 						</div>
 					</div>
-				</br>
-				<div id="kGraph" class="graph-box">
+					<div class="col-xs-3">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								行情报价
+							</div>
+							<div id="quotation" class="panel-body" style="font-size: .9em;">
+
+							</div>
+						</div>
+					</div>
 				</div>
-				<div id="volumeGraph" class="graph-box">
-				</div>
-			</div>
 		</div>
 	</div>
 
